@@ -1,4 +1,31 @@
-/* ===== Reset ===== */
+/* ===================
+  Variables
+======================*/
+:root {
+  /* Colors */
+  --color-bg: #f8f9fa;
+  --color-text: #1a1a1a;
+  --color-muted: #6b7280;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-border: #e5e7eb;
+  --color-card: #ffffff;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  /* Misc */
+  --radius: 8px;
+  --max-width: 800px;
+}
+
+/* ====================
+    Reset 
+  ===================== */
 *,
 *::before,
 *::after {
@@ -11,15 +38,142 @@ html {
   font-size: 100%;
 }
 
-/*==========BODY===============*/
+/*==========
+    BODY
+===============*/
 
 body {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
-  background-color: #eee;
-  color: #151515;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   min-height: 100vh;
-  padding: 1.2rem;
+  padding: var(--space-md);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+/* ===================
+    Header
+======================*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-block: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+.header-info h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+
+.header-info p {
+  font-size: 1rem;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  gap:var(--space-lg);
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: var(--color-accent);
+}
+/*=================
+  MAIN
+=================*/
+main {
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+#about{
+  padding: var(--space-lg)  0;
+}
+#about p {
+  max-width: 65ch;
+  line-height: 1.6;
+}
+
+/* استایل Skills */
+#skills {
+  padding: var(--space-lg) 0;
+}
+
+#skills ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-sm);
+  list-style: none;
+  padding: 0;
+}
+
+#skills li {
+  background: var(--color-card);
+  padding: var(--space-sm);
+  border-radius: var(--radius);
+  text-align: center;
+  border: 1px solid var(--color-border);
+  font-weight: 500;
+}
+
+/* استایل Contact */
+#contact {
+  padding: var(--space-lg) 0;
+  
+}
+
+#contact p {
+  margin-bottom: var(--space-xs);
+  color: var(--color-muted);
+}
+
+#contact a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+#contact a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+/* استایل Footer */
+footer {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-block: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+/* استایل عناوین h2 */
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
 }
